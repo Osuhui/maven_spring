@@ -3,14 +3,14 @@ package com.huiwl.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.huiwl.dao.UserDao;
+import com.huiwl.dao.UserDaoImpl;
 import com.huiwl.service.UserService;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
 	@Autowired
-	private UserDao userDao;
+	private UserDaoImpl userDao;
 
 	public void addGenaralBean() {
 
