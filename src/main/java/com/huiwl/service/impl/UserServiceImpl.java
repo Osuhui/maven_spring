@@ -1,8 +1,16 @@
 package com.huiwl.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.huiwl.dao.UserDao;
 import com.huiwl.service.UserService;
 
+@Service("userService")
 public class UserServiceImpl implements UserService {
+
+	@Autowired
+	private UserDao userDao;
 
 	public void addGenaralBean() {
 
@@ -20,6 +28,13 @@ public class UserServiceImpl implements UserService {
 
 		System.out.println("add BeanFactory");
 
+	}
+
+	@Override
+	public void addUser() {
+
+		System.out.println("addUserService");
+		userDao.addUserDao();
 	}
 
 }

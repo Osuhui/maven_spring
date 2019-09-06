@@ -8,4 +8,6 @@ public interface UserService {
 
 	public void addBeanFactory();
 
+	public void addUser();
+
 }
