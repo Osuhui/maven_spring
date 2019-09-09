@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.huiwl.dto.User;
 import com.huiwl.util.JdbcConnection;
 
-@Repository
+@Repository("userDao")
 public class UserDaoImpl implements UserDao {
 
 	@Autowired

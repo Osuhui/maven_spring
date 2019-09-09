@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.huiwl.controller.UserController;
 import com.huiwl.service.UserService;
 
 public class BeanTest {
@@ -16,7 +15,7 @@ public class BeanTest {
 	public void test01() {
 
 		UserService userService = applicationContext.getBean("GenaralBean", UserService.class);
-		//普通bean
+		// 普通bean
 		userService.addGenaralBean();
 	}
 
@@ -24,7 +23,7 @@ public class BeanTest {
 	public void test02() {
 
 		UserService userService = applicationContext.getBean("StaticBeanFactory", UserService.class);
-		//静态工厂
+		// 静态工厂
 		userService.addStaticBeanFactory();
 	}
 
@@ -32,16 +31,8 @@ public class BeanTest {
 	public void test03() {
 
 		UserService userService = applicationContext.getBean("UserService", UserService.class);
-		//实例工厂
+		// 实例工厂
 		userService.addBeanFactory();
-	}
-
-	@Test
-	public void test04() {
-
-		UserController userController = applicationContext.getBean("userController", UserController.class);
-		//模拟WEB
-		userController.addUser();
 	}
 
 }
