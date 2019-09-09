@@ -13,9 +13,9 @@ public class JdbcConnection {
 
 	private static String ORACLE_DRIVAER = "oracle.jdbc.OracleDriver";
 
-	private String url = "jdbc:oracle:thin:@192.14.13.23:1521:jlnutdb";
-	private String name = "HITORI_01";
-	private String password = "HITORI_01";
+	private String url = "jdbc:oracle:thin:@127.0.0.1:1521:orcl";
+	private String name = "TESTER";
+	private String password = "TESTER";
 
 	public Connection jdbcConnetion() {
 

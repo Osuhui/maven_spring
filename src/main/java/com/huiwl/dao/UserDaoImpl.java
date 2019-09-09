@@ -35,7 +35,8 @@ public class UserDaoImpl implements UserDao {
 		Connection con = jdbcConnection.jdbcConnetion();
 
 		// SQL语句
-		String sql = "select USR_ID,USR_NAME,USR_PWD from J_USR where USR_ID = ?";
+		String sql = "select USER_ID,USER_NAME,USER_PWD from USER_INFO where USER_NAME = ?";
+		String userName = "huiwl";
 
 		try {
 
@@ -47,16 +48,16 @@ public class UserDaoImpl implements UserDao {
 			ps = con.prepareStatement(sql);
 
 			//设置参数
-			ps.setString(1, "Y16454");
+			ps.setString(1, userName);
 
 			// 执行SQL
 			rs = ps.executeQuery();
 
 			// 处理返回集
 			while (rs.next()) {
-				user.setId(rs.getString("USR_ID"));
-				user.setName(rs.getString("USR_NAME"));
-				user.setPassword(rs.getString("USR_PWD"));
+				user.setId(rs.getString("USER_ID"));
+				user.setName(rs.getString("USER_NAME"));
+				user.setPassword(rs.getString("USER_PWD"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

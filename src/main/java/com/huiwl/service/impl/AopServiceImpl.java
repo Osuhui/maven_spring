@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import com.huiwl.dao.UserDaoImpl;
 import com.huiwl.service.UserService;
 
-@Service("userService")
+@Service("aopService")
 public class AopServiceImpl implements UserService {
 
 	@Autowired
