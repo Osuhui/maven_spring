@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huiwl.dao.UserMapper">
+  <select id="getUser" parameterType="String" resultMap="User">
+    select * from USER_INFO where USER_NAME = #{userName}
+  </select>
+  
+  <resultMap type="User" id="User">
+    <result property="id" column="USER_ID"/>
+    <result property="name" column="USER_NAME"/>
+    <result property="password" column="USER_PWD"/>
+  </resultMap>
+</mapper>
