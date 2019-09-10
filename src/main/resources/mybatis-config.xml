@@ -14,7 +14,8 @@
   </properties>
 
   <typeAliases>
-    <typeAlias alias="User" type="com.huiwl.dto.User" />
+    <!-- <typeAlias alias="User" type="com.huiwl.dto.User" /> -->
+    <package name="com.huiwl.dto" />
   </typeAliases>
 
   <!-- 环境，可以配置多个，default：指定采用哪个环境 -->
@@ -47,6 +48,7 @@
   </environments>
 
   <mappers>
-    <mapper resource="mappering/UserMapper.xml" />
+    <mapper resource="mapper/UserMapper.xml" />
+    <!-- <package name="mapper"/> -->
   </mappers>
 </configuration>
