@@ -6,10 +6,21 @@
   <select id="getUser" parameterType="String" resultMap="User">
     select * from USER_INFO where USER_NAME = #{userName}
   </select>
-  
+
+  <select id="getUserInfo" parameterType="String" resultMap="JalanUser">
+    select * from J_USR where USR_ID = #{userId}
+  </select>
+
   <resultMap type="User" id="User">
-    <result property="id" column="USER_ID"/>
-    <result property="name" column="USER_NAME"/>
-    <result property="password" column="USER_PWD"/>
+    <result property="id" column="USER_ID" />
+    <result property="name" column="USER_NAME" />
+    <result property="password" column="USER_PWD" />
   </resultMap>
+
+  <resultMap type="User" id="JalanUser">
+    <result property="id" column="USR_ID" />
+    <result property="name" column="USR_NAME" />
+    <result property="password" column="USR_PWD" />
+  </resultMap>
+
 </mapper>
