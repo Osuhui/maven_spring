@@ -1,4 +1,4 @@
-package beans;
+package com.huiwl.test;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -8,7 +8,7 @@ import com.huiwl.service.UserService;
 
 public class BeanTest {
 
-	String xmlPath = "ApplicationContext.xml";
+	String xmlPath = "bean.xml";
 	ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
 
 	@Test

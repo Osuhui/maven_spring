@@ -1,12 +1,12 @@
-package jdbc;
+package com.huiwl.test;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.huiwl.dao.UserDao;
+import com.huiwl.controller.UserController;
 
-public class JdbcTest {
+public class WebTest {
 
 	String xmlPath = "ApplicationContext.xml";
 	ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
@@ -14,9 +14,9 @@ public class JdbcTest {
 	@Test
 	public void test01() {
 
-		UserDao userDao = applicationContext.getBean("userDao", UserDao.class);
-
-		userDao.addUserDao();
+		UserController userController = applicationContext.getBean("userController", UserController.class);
+		// WEB测试
+		userController.addUser();
 	}
 
 }
