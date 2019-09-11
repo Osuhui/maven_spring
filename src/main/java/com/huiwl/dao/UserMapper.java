@@ -1,10 +1,12 @@
 package com.huiwl.dao;
 
+import java.util.List;
+
 import com.huiwl.dto.User;
 
 public interface UserMapper {
 
-	public User getUser(String userName);
+	public List<User> getUser(String userName);
 
 	public User getUserInfo(String userId);
 

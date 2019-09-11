@@ -1,4 +1,4 @@
-package com.huiwl.aspect;
+package com.huiwl.aopTest;
 
 public class MyAspect {
 	
