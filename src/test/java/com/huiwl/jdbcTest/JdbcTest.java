@@ -1,4 +1,4 @@
-package com.huiwl.test;
+package com.huiwl.jdbcTest;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;

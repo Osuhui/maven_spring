@@ -1,4 +1,4 @@
-package com.huiwl.test;
+package com.huiwl.webTest;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -8,7 +8,7 @@ import com.huiwl.controller.UserController;
 
 public class WebTest {
 
-	String xmlPath = "ApplicationContext.xml";
+	String xmlPath = "bean.xml";
 	ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
 
 	@Test

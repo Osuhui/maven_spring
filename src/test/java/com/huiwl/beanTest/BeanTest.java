@@ -1,4 +1,4 @@
-package com.huiwl.test;
+package com.huiwl.beanTest;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;

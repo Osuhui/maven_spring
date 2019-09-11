@@ -19,12 +19,12 @@
 
     <!-- 静态工厂 -->
     <bean id="StaticBeanFactory"
-        class="com.huiwl.factory.StaticBeanFactory"
+        class="com.huiwl.util.factory.StaticBeanFactory"
         factory-method="createService"></bean>
 
     <!-- 实例工厂 -->
     <!-- 1.创建工厂实例 -->
-    <bean id="BeanFactory" class="com.huiwl.factory.BeanFactory"></bean>
+    <bean id="BeanFactory" class="com.huiwl.util.factory.BeanFactory"></bean>
 
     <!-- 2.获取UserService类， factory-bean指定工厂实例 factory-method指定工厂中的普通方法 -->
     <bean id="UserService"

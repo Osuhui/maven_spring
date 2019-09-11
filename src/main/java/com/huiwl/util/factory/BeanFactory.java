@@ -1,11 +1,11 @@
-package com.huiwl.factory;
+package com.huiwl.util.factory;
 
 import com.huiwl.service.UserService;
 import com.huiwl.service.impl.UserServiceImpl;
 
-public class StaticBeanFactory {
+public class BeanFactory {
 
-	public static UserService createService() {
+	public UserService createService() {
 
 		return new UserServiceImpl();
 

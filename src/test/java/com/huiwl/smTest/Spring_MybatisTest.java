@@ -1,4 +1,4 @@
-package com.huiwl.test;
+package com.huiwl.smTest;
 
 import java.util.List;
 

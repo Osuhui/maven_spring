@@ -1,4 +1,4 @@
-package com.huiwl.test;
+package com.huiwl.mybatisTest;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.huiwl.dto.User;
-import com.huiwl.util.JdbcConnection;
+import com.huiwl.util.jdbc.JdbcConnection;
 
 @Repository("userDao")
 public class UserDaoImpl implements UserDao {
