@@ -20,8 +20,8 @@ public class Spring_MybatisTest {
 	private UserMapper userMapper;
 
 	@Test
-	public void testQueryUserByTableName() {
-		List<User> userList = this.userMapper.getUser("huiwl");
+	public void test01() {
+		List<User> userList = this.userMapper.getUser("test");
 		for (User user : userList) {
 			System.out.println(user);
 		}

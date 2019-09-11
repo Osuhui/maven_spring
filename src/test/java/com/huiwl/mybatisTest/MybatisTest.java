@@ -18,7 +18,7 @@ public class MybatisTest {
 	public void test01() throws IOException {
 
 		// 指定全局配置文件
-		String resource = "mybatis-config.xml";
+		String resource = "com/huiwl/mybatisTest/mybatis-config.xml";
 		// 读取配置文件
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		// 构建sqlSessionFactory

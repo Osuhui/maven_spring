@@ -88,9 +88,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [\nid=" + id + "\nname=" + name + "\npassword=" + password + "\narrayDate=" + arrayDate
-				+ "\nlistDate=" + listDate + "\nmapDate=" + mapDate + "\nsetDate=" + setDate + "\npropDate=" + propDate
-				+ "]";
+		return "User [\nid=" + id + "\nname=" + name + "\npassword=" + password + "]";
 	}
 
 }

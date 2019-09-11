@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:p="http://www.springframework.org/schema/p"
@@ -7,18 +7,18 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
     					http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-   						http://www.springframework.org/schema/context
-   						http://www.springframework.org/schema/context/spring-context-4.0.xsd
-   						http://www.springframework.org/schema/aop
-   						http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
-   						http://www.springframework.org/schema/tx
-   						http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
-   						http://www.springframework.org/schema/util
-   						http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+    					http://www.springframework.org/schema/context
+    					http://www.springframework.org/schema/context/spring-context-4.0.xsd
+    					http://www.springframework.org/schema/aop
+    					http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+    					http://www.springframework.org/schema/tx
+    					http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+    					http://www.springframework.org/schema/util
+    					http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
 	<!-- 加载配置文件 -->
 	<context:property-placeholder
-		location="classpath:properties/*.properties" />
+		location="classpath:db.properties" />
 	<!-- 数据库连接池 -->
 	<bean id="dataSource"
 		class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
@@ -47,7 +47,7 @@
 		<property name="mapperLocations"
 			value="classpath:mapper/*.xml"></property>
 		<!--如果mybatis-config.xml没有特殊配置也可以不需要下面的配置 -->
-		<!-- <property name="configLocation" value="classpath:mybatis-config.xml" /> -->
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
 	</bean>
 
 	<!-- DAO接口所在包名，Spring会自动查找其下的类 -->
