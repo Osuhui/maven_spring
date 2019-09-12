@@ -8,7 +8,7 @@ import com.huiwl.service.UserService;
 
 public class BeanTest {
 
-	String xmlPath = "bean.xml";
+	String xmlPath = "com/huiwl/beanTest/bean.xml";
 	ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
 
 	@Test

@@ -8,7 +8,7 @@ import com.huiwl.controller.UserController;
 
 public class WebTest {
 
-	String xmlPath = "bean.xml";
+	String xmlPath = "com/huiwl/webTest/spring-config.xml";
 	ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
 
 	@Test

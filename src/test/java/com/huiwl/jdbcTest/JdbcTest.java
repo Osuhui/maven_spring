@@ -8,7 +8,7 @@ import com.huiwl.dao.UserDao;
 
 public class JdbcTest {
 
-	String xmlPath = "bean.xml";
+	String xmlPath = "com/huiwl/jdbcTest/jdbc-config.xml";
 	ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
 
 	@Test
