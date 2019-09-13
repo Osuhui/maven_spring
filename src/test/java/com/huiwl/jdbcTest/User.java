@@ -1,4 +1,4 @@
-package com.huiwl.dto;
+package com.huiwl.jdbcTest;
 
 import java.lang.reflect.Array;
 import java.util.List;
@@ -6,8 +6,13 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
 
+	@Value("123")
 	private String id;
 	private String name;
 	private String password;

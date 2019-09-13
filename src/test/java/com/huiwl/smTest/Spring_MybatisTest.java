@@ -12,8 +12,8 @@ import com.huiwl.dao.UserMapper;
 import com.huiwl.dto.User;
 
 //目标：测试一下spring的bean的某些功能
-@RunWith(SpringJUnit4ClassRunner.class) //junit整合spring的测试//立马开启了spring的注解
-@ContextConfiguration(locations = "classpath:spring-mybatis.xml") //加载核心配置文件，自动构建spring容器
+@RunWith(SpringJUnit4ClassRunner.class) // junit整合spring的测试//立马开启了spring的注解
+@ContextConfiguration(locations = "classpath:spring-mybatis.xml") // 加载核心配置文件，自动构建spring容器
 public class Spring_MybatisTest {
 
 	@Autowired
@@ -21,10 +21,8 @@ public class Spring_MybatisTest {
 
 	@Test
 	public void test01() {
-		List<User> userList = this.userMapper.getUser("test");
-		for (User user : userList) {
-			System.out.println(user);
-		}
+		List<User> userList = this.userMapper.getUserFromUserName("test");
+		System.out.println(userList);
 	}
 
 }

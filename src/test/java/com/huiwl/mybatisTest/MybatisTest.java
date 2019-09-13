@@ -31,7 +31,7 @@ public class MybatisTest {
 
 			// 操作CRUD，第一个参数：指定statement，规则：命名空间+“.”+statementId
 			// 第二个参数：指定传入sql的参数：这里是用户id
-			User user = sqlSession.selectOne("getUser", "huiwl");
+			User user = sqlSession.selectOne("getUserFromUserName", "huiwl");
 			System.out.println(user);
 		} finally {
 			sqlSession.close();

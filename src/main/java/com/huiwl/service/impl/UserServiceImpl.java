@@ -1,40 +1,26 @@
 package com.huiwl.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.huiwl.dao.UserDaoImpl;
+import com.huiwl.dao.UserMapper;
+import com.huiwl.dto.User;
 import com.huiwl.service.UserService;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
 	@Autowired
-	private UserDaoImpl userDao;
-
-	public void addGenaralBean() {
-
-		System.out.println("add genaral beans");
-
-	}
-
-	public void addStaticBeanFactory() {
-
-		System.out.println("add Static BeanFactory");
-
-	}
-
-	public void addBeanFactory() {
-
-		System.out.println("add BeanFactory");
-
-	}
+	private UserMapper userMapper;
 
 	@Override
-	public void addUser() {
+	public void getUserFromUserName(String userName) {
 
-		System.out.println("addUserService");
-		userDao.addUserDao();
+		List<User> userList = userMapper.getUserFromUserName(userName);
+		System.out.println(userList);
+		System.out.println("........End........");
 	}
 
 }

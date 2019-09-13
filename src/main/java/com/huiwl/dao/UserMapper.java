@@ -6,7 +6,7 @@ import com.huiwl.dto.User;
 
 public interface UserMapper {
 
-	public List<User> getUser(String userName);
+	public List<User> getUserFromUserName(String userName);
 
 	public User getUserInfo(String userId);
 

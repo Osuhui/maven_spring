@@ -1,4 +1,4 @@
-package com.huiwl.dao;
+package com.huiwl.jdbcTest;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,10 +8,9 @@ import java.sql.SQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.huiwl.dto.User;
 import com.huiwl.util.jdbc.JdbcConnection;
 
-@Repository("userDao")
+@Repository
 public class UserDaoImpl implements UserDao {
 
 	@Autowired
@@ -29,14 +28,13 @@ public class UserDaoImpl implements UserDao {
 	// 结果集
 	private ResultSet rs;
 
-	public void addUserDao() {
+	public void addUserDao(String userName) {
 
 		// 连接Oracle
 		Connection con = jdbcConnection.jdbcConnetion();
 
 		// SQL语句
 		String sql = "select USER_ID,USER_NAME,USER_PWD from USER_INFO where USER_NAME = ?";
-		String userName = "huiwl";
 
 		try {
 
@@ -66,7 +64,6 @@ public class UserDaoImpl implements UserDao {
 		}
 		System.out.println("addUserDao");
 		System.out.println(user);
-		System.out.println("....end....");
 	}
 
 }
