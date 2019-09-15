@@ -1,21 +1,11 @@
 package com.huiwl.dto;
 
-import java.lang.reflect.Array;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Set;
-
 public class User {
 
 	private String id;
 	private String name;
 	private String password;
-	private Array arrayDate;
-	private List<String> listDate;
-	private Map<String, String> mapDate;
-	private Set<String> setDate;
-	private Properties propDate;
+	private String status;
 
 	public String getId() {
 		return id;
@@ -41,49 +31,17 @@ public class User {
 		this.password = password;
 	}
 
-	public Array getArrayDate() {
-		return arrayDate;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setArrayDate(Array arrayDate) {
-		this.arrayDate = arrayDate;
-	}
-
-	public List<String> getListDate() {
-		return listDate;
-	}
-
-	public void setListDate(List<String> listDate) {
-		this.listDate = listDate;
-	}
-
-	public Map<String, String> getMapDate() {
-		return mapDate;
-	}
-
-	public void setMapDate(Map<String, String> mapDate) {
-		this.mapDate = mapDate;
-	}
-
-	public Set<String> getSetDate() {
-		return setDate;
-	}
-
-	public void setSetDate(Set<String> setDate) {
-		this.setDate = setDate;
-	}
-
-	public Properties getPropDate() {
-		return propDate;
-	}
-
-	public void setPropDate(Properties propDate) {
-		this.propDate = propDate;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	@Override
 	public String toString() {
-		return "User [\nid=" + id + "\nname=" + name + "\npassword=" + password + "]\n";
+		return "User [id=" + id + ", name=" + name + ", password=" + password + ", status=" + status + "]";
 	}
 
 }

@@ -25,4 +25,35 @@ public class Spring_MybatisTest {
 		System.out.println(userList);
 	}
 
+	@Test
+	public void test02() {
+
+		User user = new User();
+		user.setName("test01");
+		user.setPassword("test01");
+
+		// 添加用户
+		userMapper.addUser(user);
+	}
+
+	@Test
+	public void test03() {
+
+		User user = new User();
+		user.setId("996223192");
+		user.setName("test01");
+		user.setPassword("test01");
+
+		// 更新用户
+		userMapper.updateUser(user);
+	}
+
+	@Test
+	public void test04() {
+
+		String userId = "1866476214";
+		// 删除用户
+		userMapper.deleteUser(userId);
+	}
+
 }
