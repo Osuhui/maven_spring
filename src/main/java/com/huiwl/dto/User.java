@@ -5,6 +5,8 @@ public class User {
 	private String id;
 	private String name;
 	private String password;
+	private String groupCd;
+	private String levelCd;
 	private String status;
 
 	public String getId() {
@@ -31,6 +33,22 @@ public class User {
 		this.password = password;
 	}
 
+	public String getGroupCd() {
+		return groupCd;
+	}
+
+	public void setGroupCd(String groupCd) {
+		this.groupCd = groupCd;
+	}
+
+	public String getLevelCd() {
+		return levelCd;
+	}
+
+	public void setLevelCd(String levelCd) {
+		this.levelCd = levelCd;
+	}
+
 	public String getStatus() {
 		return status;
 	}
@@ -41,7 +59,8 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", password=" + password + ", status=" + status + "]";
+		return "User [id=" + id + ", name=" + name + ", password=" + password + ", groupCd=" + groupCd + ", levelCd="
+				+ levelCd + ", status=" + status + "]\n";
 	}
 
 }

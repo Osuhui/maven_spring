@@ -7,7 +7,7 @@
        					   http://www.springframework.org/schema/aop 
        					   http://www.springframework.org/schema/aop/spring-aop.xsd">
 	<!-- 1 创建目标类 -->
-	<bean id="aopService" class="com.huiwl.service.impl.AopServiceImpl"></bean>
+	<bean id="aopServiceId" class="com.huiwl.service.impl.AopServiceImpl"></bean>
 	<!-- 2 创建切面类（通知） -->
 	<bean id="myAspectId" class="com.huiwl.util.advice.MyAspect"></bean>
 	<!-- 3 aop编程 
@@ -22,8 +22,10 @@
 			execution(* com.itheima.c_spring_aop.*.*(..))
 			选择方法         返回值任意   包             类名任意   方法名任意   参数任意
 	-->
-	<aop:config proxy-target-class="true">
+<!--
+ 	<aop:config proxy-target-class="true">
 		<aop:pointcut expression="execution(* com.huiwl.service.impl.*.*(..))" id="myPointCut"/>
 		<aop:advisor advice-ref="myAspectId" pointcut-ref="myPointCut"/>
 	</aop:config>
-</beans>
+ -->
+ </beans>

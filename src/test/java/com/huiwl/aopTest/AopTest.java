@@ -5,6 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.huiwl.service.AopService;
+import com.huiwl.util.proxy.MyProxy;
 
 public class AopTest {
 
@@ -13,8 +14,9 @@ public class AopTest {
 
 	@Test
 	public void test01() {
-		AopService aopService = applicationContext.getBean("aopService", AopService.class);
-		aopService.addAop();
+		AopService aopService = applicationContext.getBean("aopServiceId", AopService.class);
+		AopService aopProxy = MyProxy.getProxy(aopService);
+		aopProxy.addAop();
 	}
 
 }

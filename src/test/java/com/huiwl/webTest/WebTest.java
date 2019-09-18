@@ -19,7 +19,7 @@ public class WebTest {
 	@Test
 	public void test01() {
 
-		String userName = "test";
+		String userName = "test01";
 		userController.getUserFromUserName(userName);
 	}
 

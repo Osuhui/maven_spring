@@ -9,11 +9,15 @@
       USER_INFO(
         USER_ID,
         USER_NAME,
-        USER_PWD)
+        USER_PWD,
+        GROUP_CD,
+        LEVEL_CD)
     values(
       trunc(DBMS_RANDOM.value(1,10000000000)),
       #{user.name},
-      #{user.password})
+      #{user.password},
+      #{user.groupCd},
+      #{user.levelCd})
   </insert>
 
   <select id="getUserFromUserName" parameterType="String" resultMap="User">
@@ -24,12 +28,22 @@
       USER_NAME = #{userName}
   </select>
 
+  <select id="getUserFromGroupCd" parameterType="String" resultMap="User">
+    select *
+    from
+      USER_INFO
+    where
+      GROUP_CD = #{groupCd}
+  </select>
+
   <update id="updateUser" parameterType="USer">
     update
       USER_INFO
     set
       USER_NAME = #{user.name},
-      USER_PWD = #{user.password}
+      USER_PWD = #{user.password},
+      GROUP_CD = #{user.groupCd},
+      LEVEL_CD = #{user.levelCd}
     where
     USER_ID = #{user.id}
   </update>
@@ -39,9 +53,5 @@
       USER_INFO
     where USER_ID = #{userId}
   </delete>
-
-  <select id="getUserInfo" parameterType="String" resultMap="JalanUser">
-    select * from J_USR where USR_ID = #{userId}
-  </select>
 
 </mapper>
