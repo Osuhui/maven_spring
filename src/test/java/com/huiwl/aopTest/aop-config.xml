@@ -2,15 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
        					   http://www.springframework.org/schema/beans/spring-beans.xsd
-       					   http://www.springframework.org/schema/aop 
+       					   http://www.springframework.org/schema/aop
        					   http://www.springframework.org/schema/aop/spring-aop.xsd">
 	<!-- 1 创建目标类 -->
 	<bean id="aopServiceId" class="com.huiwl.service.impl.AopServiceImpl"></bean>
 	<!-- 2 创建切面类（通知） -->
-	<bean id="myAspectId" class="com.huiwl.util.advice.MyAspect"></bean>
-	<!-- 3 aop编程 
+	<bean id="logUtilsId" class="com.huiwl.util.advice.LogUtils"></bean>
+	<!-- 3 aop编程
 		3.1 导入命名空间
 		3.2 使用 <aop:config>进行配置
 				proxy-target-class="true" 声明时使用cglib代理
@@ -22,10 +22,8 @@
 			execution(* com.itheima.c_spring_aop.*.*(..))
 			选择方法         返回值任意   包             类名任意   方法名任意   参数任意
 	-->
-<!--
  	<aop:config proxy-target-class="true">
 		<aop:pointcut expression="execution(* com.huiwl.service.impl.*.*(..))" id="myPointCut"/>
-		<aop:advisor advice-ref="myAspectId" pointcut-ref="myPointCut"/>
+		<aop:advisor advice-ref="logUtilsId" pointcut-ref="myPointCut"/>
 	</aop:config>
- -->
  </beans>
