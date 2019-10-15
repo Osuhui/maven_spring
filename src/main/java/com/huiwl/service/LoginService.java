@@ -1,9 +1,9 @@
 package com.huiwl.service;
 
-import com.huiwl.dto.User;
+import com.huiwl.dto.UserDto;
 
 public interface LoginService {
 
-	public User login(User user);
+	public UserDto login(UserDto user);
 
 }

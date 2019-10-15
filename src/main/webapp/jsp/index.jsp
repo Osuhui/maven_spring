@@ -7,6 +7,6 @@
 <title>主页</title>
 </head>
 <body>
-    <h3>欢迎，${userInfoDto.userName }</h3>
+    <h3>欢迎，${User.name }</h3>
 </body>
 </html>

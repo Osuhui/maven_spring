@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.huiwl.dao.UserMapper;
-import com.huiwl.dto.User;
+import com.huiwl.dto.UserDto;
 import com.huiwl.service.UserService;
 
 @Service("userService")
@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void getUserFromUserName(String userName) {
 
-		List<User> userList = userMapper.getUserFromUserName(userName);
+		List<UserDto> userList = userMapper.getUserFromUserName(userName);
 		System.out.println(userList);
 		System.out.println("........End........");
 	}

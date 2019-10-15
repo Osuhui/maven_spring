@@ -1,6 +1,9 @@
 package com.huiwl.dto;
 
-public class User {
+import org.springframework.stereotype.Component;
+
+@Component
+public class UserDto {
 
 	private String id;
 	private String name;

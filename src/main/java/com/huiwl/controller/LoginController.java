@@ -5,7 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.huiwl.dto.User;
+import com.huiwl.dto.UserDto;
+import com.huiwl.dto.webDto.LoginWebDto;
 import com.huiwl.service.LoginService;
 
 @Controller
@@ -15,12 +16,22 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 
-	// 根据用户名查找
+	@Autowired
+	private UserDto userDto;
+
+	// 登录
 	@RequestMapping(value = "login", method = RequestMethod.POST)
-	public User login(User inDto, User outDto) {
+	public String login(LoginWebDto dto) {
 
-		outDto = loginService.login(inDto);
+		userDto.setName(dto.getUserName());
+		userDto.setPassword(dto.getUserPwd());
 
-		return outDto;
+		// 进行登陆处理
+		userDto = loginService.login(userDto);
+		
+		dto.setLoginStatus(userDto.getStatus());
+		
+		return "index";
 	}
+
 }

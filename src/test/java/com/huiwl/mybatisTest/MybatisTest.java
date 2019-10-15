@@ -9,7 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
 
-import com.huiwl.dto.User;
+import com.huiwl.dto.UserDto;
 
 public class MybatisTest {
 
@@ -30,7 +30,7 @@ public class MybatisTest {
 
 			// 操作CRUD，第一个参数：指定statement，规则：命名空间+“.”+statementId
 			// 第二个参数：指定传入sql的参数：这里是用户id
-			User user = sqlSession.selectOne("getUserFromUserName", "huiwl");
+			UserDto user = sqlSession.selectOne("getUserFromUserName", "huiwl");
 			System.out.println(user);
 		} finally {
 			sqlSession.close();

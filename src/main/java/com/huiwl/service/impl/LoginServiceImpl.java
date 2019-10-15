@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.huiwl.dao.UserMapper;
-import com.huiwl.dto.User;
+import com.huiwl.dto.UserDto;
 import com.huiwl.service.LoginService;
 import com.huiwl.util.constant.LoginConstant;
 
@@ -20,16 +20,16 @@ public class LoginServiceImpl implements LoginService {
 	private LoginConstant loginConstant;
 
 	@Override
-	public User login(User user) {
+	public UserDto login(UserDto user) {
 
 		// 登录状态
 		String status = null;
 
 		// 查找出所有该名字的用户
-		List<User> userList = userMapper.getUserFromUserName(user.getName());
+		List<UserDto> userList = userMapper.getUserFromUserName(user.getName());
 
 		if (userList != null && userList.size() != 0) {
-			for (User userInfo : userList) {
+			for (UserDto userInfo : userList) {
 
 				if (user.getPassword().equals(userInfo.getPassword())) {
 					// 登陸成功

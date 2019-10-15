@@ -43,12 +43,12 @@ body {
 			<table id="login_table">
 				<tr>
 					<td>用户名：</td>
-					<td><input name="name" type="text" value="请输入用户名"
+					<td><input name="userName" type="text" value="请输入用户名"
 						maxlength="20"></td>
 				</tr>
 				<tr>
 					<td>密码：</td>
-					<td><input name="password" type="password" value="请输入用户密码"
+					<td><input name="userPwd" type="password" value="请输入用户密码"
 						maxlength="20"></td>
 				</tr>
 			</table>

@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.huiwl.dao.UserMapper">
 
-  <insert id="addUser" parameterType="User">
+  <insert id="addUser" parameterType="UserDto">
     insert into
       USER_INFO(
         USER_ID,
@@ -36,7 +36,7 @@
       GROUP_CD = #{groupCd}
   </select>
 
-  <update id="updateUser" parameterType="USer">
+  <update id="updateUser" parameterType="UserDto">
     update
       USER_INFO
     set

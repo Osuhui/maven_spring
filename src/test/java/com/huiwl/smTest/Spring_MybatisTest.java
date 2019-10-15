@@ -9,7 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.huiwl.dao.UserMapper;
-import com.huiwl.dto.User;
+import com.huiwl.dto.UserDto;
 
 //目标：测试一下spring的bean的某些功能
 @RunWith(SpringJUnit4ClassRunner.class) // junit整合spring的测试//立马开启了spring的注解
@@ -21,7 +21,7 @@ public class Spring_MybatisTest {
 
 	@Test
 	public void test01() {
-		List<User> userList = this.userMapper.getUserFromGroupCd("T");
+		List<UserDto> userList = this.userMapper.getUserFromGroupCd("T");
 		System.out.println(userList);
 	}
 
