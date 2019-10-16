@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
+<%@ page import="com.huiwl.dto.webDto.LoginWebDto"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html>
@@ -43,12 +43,11 @@ body {
 			<table id="login_table">
 				<tr>
 					<td>用户名：</td>
-					<td><input name="userName" type="text" value="请输入用户名"
-						maxlength="20"></td>
+					<td><input name="userName" type="text" value="" maxlength="20"></td>
 				</tr>
 				<tr>
 					<td>密码：</td>
-					<td><input name="userPwd" type="password" value="请输入用户密码"
+					<td><input name="userPwd" type="password" value=""
 						maxlength="20"></td>
 				</tr>
 			</table>
