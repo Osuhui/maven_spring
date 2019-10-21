@@ -27,10 +27,11 @@ public class LoginController {
 		userDto.setPassword(dto.getUserPwd());
 
 		// 进行登陆处理
-		userDto = loginService.login(userDto);
-		
-		dto.setLoginStatus(userDto.getStatus());
-		
+//		userDto = loginService.login(userDto);
+//
+//		dto.setLoginStatus(userDto.getStatus());
+
+		dto.setLoginStatus("1");
 		return "index";
 	}
 

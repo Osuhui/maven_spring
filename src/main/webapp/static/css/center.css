@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+body {
+	background-color: red;
+	background-image: url(static/images/005.png);
+	background-size: cover;
+}
+
+#center_div {
+	width: 400px;
+	height: 200px;
+	background-color:;
+	position: fixed;
+}
+
+#login_table {
+	vertical-align: middle;
+	margin: auto;
+}
