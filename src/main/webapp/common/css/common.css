@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.header {
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	/*以上设置是重点必须的*/
+	background: rgb(30, 75, 69);
+	padding-left: 0px;
+	color: #fff;
+	font-size: 20px;
+	line-height: 80px;
+	text-align: center;
+}
+
+.footer {
+	width: 100%;
+	height: 60px;
+	background: rgb(30, 75, 69);
+	color: #fff;
+	position: absolute;
+	bottom: 0;
+	/*以上设置是重点必须的*/
+	text-align: center;
+	line-height: 40px;
+}

@@ -13,36 +13,51 @@
 <html>
 <head>
 
-<!-- 导入外部式样 -->
-<link rel="stylesheet" href="/static/css/center.css">
+<!-- 导入外部css式样 -->
+<link rel="stylesheet" media="screen" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+
+<!-- 导入JQuery库 -->
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+<script type="text/javascript" src="common/js/jquery-3.4.1.min.js"></script>
 <!-- 导入js文件 -->
-<script src="/static/js/common.js" charset="UTF-8"></script>
+
+
 
 </head>
+
 <body>
-	<form action="login" method="post">
-		<table id="login_table" style="text-align: center; margin: auto;">
-			<tr>
-				<td>用户名：</td>
-				<td><input name="userName" type="text"
-					value="<c:out value="${loginWebdto.userName}"></c:out>"
-					maxlength="20"></td>
-			</tr>
-			<tr>
-				<td>密码：</td>
-				<td><input name="userPwd" type="password" value=""
-					maxlength="20"></td>
-			</tr>
-		</table>
-		<div style="text-align: center; margin: auto;">
-			<button type="submit">登录</button>
-			<button type="reset">重置</button>
+	<div id="particles-js">
+		<div class="login">
+			<div class="login-top">登录</div>
+			<div class="login-center clearfix">
+				<div class="login-center-img">
+					<img src="images/name.png" />
+				</div>
+				<div class="login-center-input">
+					<input type="text" name="" value="" placeholder="用户名"
+						onfocus="this.placeholder=''" onblur="this.placeholder='用户名'" />
+					<div class="login-center-input-text">用户名</div>
+				</div>
+			</div>
+			<div class="login-center clearfix">
+				<div class="login-center-img">
+					<img src="images/password.png" />
+				</div>
+				<div class="login-center-input">
+					<input type="password" name="" value="" placeholder="密码"
+						onfocus="this.placeholder=''" onblur="this.placeholder='密码'" />
+					<div class="login-center-input-text">密码</div>
+				</div>
+			</div>
+			<div class="login-button">登录</div>
 		</div>
+		<!-- <div class="sk-rotating-plane"></div> -->
+		<script type="text/javascript" src="js/particles.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+	</div>
 
-		<footer style="text-align: center;">
-			<c:import url="jsp/index.jsp"></c:import>
-		</footer>
-
-	</form>
 </body>
+
 </html>

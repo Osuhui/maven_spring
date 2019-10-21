@@ -20,6 +20,9 @@
 
     <!-- 静态资源可访问的设置方式 -->
     <mvc:default-servlet-handler />
+    <mvc:resources location="/static/js/" mapping="/js/**" />
+    <mvc:resources location="/static/css/" mapping="/css/**" />
+    <mvc:resources location="/static/images/" mapping="/images/**" />
 
     <!-- 配置视图解析器，可以显式设置，也可以不设置，不设置会依据SpringMVC的默认设置 -->
     <bean id="viewResolver"

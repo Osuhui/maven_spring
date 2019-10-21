@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+body {
+	background-image: url(../images/005.png);
+	background-size: cover;
+}
+
+#center_div {
+	width: 400px;
+	height: 200px;
+	background-color:;
+	position: fixed;
+}
+
+.login-button {
+	cursor: pointer;
+	width: 250px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	background-color: dodgerblue;
+	border-radius: 5px;
+	margin: 0 auto;
+	margin-top: 50px;
+	color: white;
+}
