@@ -8,49 +8,25 @@ window.onload = function() {
 	center_div.style.top = (height_browser - height_div) / 2 + "px";
 	center_div.style.left = (width_browser - width_div) / 2 + "px";
 }
-*/
+ */
 
+window.onload = function() {
+	// 登录处理
+	function login() {
 
-/*
-$(document).ready(function() {
-	alert("jquery test");
-
-})*/
-
-function hasClass(elem, cls) {
-	cls = cls || '';
-	if (cls.replace(/\s/g, '').length == 0)
-		return false;
-	//当cls没有参数时，返回false
-	return new RegExp(' ' + cls + ' ').test(' ' + elem.className + ' ');
-}
-
-function addClass(ele, cls) {
-	if (!hasClass(ele, cls)) {
-		ele.className = ele.className == '' ? cls : ele.className + ' ' + cls;
+		// check处理
+		loginCheck();
 	}
-}
 
-function removeClass(ele, cls) {
-	if (hasClass(ele, cls)) {
-		var newClass = ' ' + ele.className.replace(/[\t\r\n]/g, '') + ' ';
-		while (newClass.indexOf(' ' + cls + ' ') >= 0) {
-			newClass = newClass.replace(' ' + cls + ' ', ' ');
+	// 登录check
+	function loginCheck() {
+		var userName = $("#login-useName").value;
+		var userPwd = $("#login-userPwd").value;
+		// 必须check
+		if (userName == null || usePwd == null) {
+			alert("用户名或密码不能为空！");
 		}
-		ele.className = newClass.replace(/^\s+|\s+$/g, '');
-	}
-}
-document.querySelector(".login-button").onclick = function() {
-	addClass(document.querySelector(".login"), "active")
-	setTimeout(function() {
-		addClass(document.querySelector(".sk-rotating-plane"), "active")
-		document.querySelector(".login").style.display = "none"
-	}, 800)
-	setTimeout(function() {
-		removeClass(document.querySelector(".login"), "active")
-		removeClass(document.querySelector(".sk-rotating-plane"), "active")
-		document.querySelector(".login").style.display = "block"
-			alert("登录成功")
 
-	}, 5000)
+	}
+
 }

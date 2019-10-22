@@ -21,43 +21,51 @@
 <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
 <script type="text/javascript" src="common/js/jquery-3.4.1.min.js"></script>
 <!-- 导入js文件 -->
+<script type="text/javascript" src="js/particles.min.js"></script>
 
+<script type="text/javascript" src="js/login.js"></script>
 
 
 </head>
 
 <body>
 	<div id="particles-js">
-		<div class="login">
+		<form class="login" action="login" method="post">
 			<div class="login-top">登录</div>
+
 			<div class="login-center clearfix">
 				<div class="login-center-img">
 					<img src="images/name.png" />
 				</div>
 				<div class="login-center-input">
-					<input type="text" name="" value="" placeholder="用户名"
-						onfocus="this.placeholder=''" onblur="this.placeholder='用户名'" />
+					<input type="text" id="login-userName" name="userName"
+						value="<c:out value="${loginWebdto.userName }"></c:out>"
+						placeholder="用户名" onfocus="this.placeholder=''"
+						onblur="this.placeholder='用户名'" />
 					<div class="login-center-input-text">用户名</div>
 				</div>
 			</div>
+
 			<div class="login-center clearfix">
 				<div class="login-center-img">
 					<img src="images/password.png" />
 				</div>
 				<div class="login-center-input">
-					<input type="password" name="" value="" placeholder="密码"
-						onfocus="this.placeholder=''" onblur="this.placeholder='密码'" />
+					<input type="password" id="login-userPwd" name="userPwd"
+						value="<c:out value="${loginWebdto.userPwd }"></c:out>"
+						placeholder="密码" onfocus="this.placeholder=''"
+						onblur="this.placeholder='密码'" />
 					<div class="login-center-input-text">密码</div>
 				</div>
-			</div>
-			<div class="login-button">登录</div>
-		</div>
-		<!-- <div class="sk-rotating-plane"></div> -->
-		<script type="text/javascript" src="js/particles.min.js"></script>
-		<script type="text/javascript" src="js/app.js"></script>
-		<script type="text/javascript" src="js/login.js"></script>
-	</div>
 
+			</div>
+			<div class="login-center clearfix">
+				<button class="login-button" onclick="login()">登录</button>
+			</div>
+
+		</form>
+	</div>
+	<script type="text/javascript" src="js/app.js"></script>
 </body>
 
 </html>
