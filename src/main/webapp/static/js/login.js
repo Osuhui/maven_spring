@@ -10,23 +10,15 @@ window.onload = function() {
 }
  */
 
-window.onload = function() {
-	// 登录处理
-	function login() {
+// 登录处理
+/*$(function() {
+	var url="http://localhost:8080/maven_spring/login";
+	var data="";
 
-		// check处理
-		loginCheck();
-	}
+	$(".login-button").click(
 
-	// 登录check
-	function loginCheck() {
-		var userName = $("#login-useName").value;
-		var userPwd = $("#login-userPwd").value;
-		// 必须check
-		if (userName == null || usePwd == null) {
-			alert("用户名或密码不能为空！");
-		}
-
-	}
-
-}
+			function() {
+				$.post(url,data,function(data){
+				});
+			})
+})*/
