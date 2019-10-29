@@ -8,7 +8,6 @@
 <%@ page import="com.huiwl.util.constant.LoginConstant"%>
 
 <!-- 画面变量的宣言 -->
-<c:set var="loginWebdto" value="${LoginWebDto}"></c:set>
 
 <html>
 <head>
@@ -16,7 +15,9 @@
 </head>
 
 <body>
-	<%=LoginConstant.LOGIN%>
-	<c:out value="${loginWebdto.userName}"></c:out>
+	<c:out value="welcome! ${loginWebDto.userName}"></c:out>
+	<div>
+		<a href="">分页</a>
+	</div>
 </body>
 </html>

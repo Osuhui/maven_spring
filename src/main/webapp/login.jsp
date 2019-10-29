@@ -8,7 +8,7 @@
 <%@ page import="com.huiwl.util.constant.LoginConstant"%>
 
 <!-- 画面变量的宣言 -->
-<c:set var="loginWebdto" value="${LoginWebDto}"></c:set>
+<c:set var="errMsg" value="${loginWebDto.errMsg}"></c:set>
 
 <html>
 <head>
@@ -19,9 +19,8 @@
 
 <!-- 导入JQuery库 -->
 <script type="text/javascript" src="common/js/jquery-3.4.1.min.js"></script>
-<!-- 导入js文件 -->
-<script type="text/javascript" src="js/particles.min.js"></script>
 
+<!-- 导入js文件 -->
 <script type="text/javascript" src="js/login.js"></script>
 
 
@@ -30,8 +29,12 @@
 <body>
 	<div id="particles-js">
 		<form class="login" action="login" method="post">
-			<font color="red"><c:out value="${loginWebdto.errMsg }"></c:out></font>
+
 			<div class="login-top">登录</div>
+
+			<div class="login-center clearfix" style="color: red;">
+				<c:out value="${errMsg }"></c:out>
+			</div>
 
 			<div class="login-center clearfix">
 				<div class="login-center-img">
@@ -39,7 +42,7 @@
 				</div>
 				<div class="login-center-input">
 					<input type="text" name="userName"
-						value="<c:out value="${loginWebdto.userName }"></c:out>"
+						value="<c:out value="${loginWebDto.userName }"></c:out>"
 						placeholder="用户名" onfocus="this.placeholder=''"
 						onblur="this.placeholder='用户名'" />
 					<div class="login-center-input-text">用户名</div>
@@ -52,19 +55,19 @@
 				</div>
 				<div class="login-center-input">
 					<input type="password" name="userPwd"
-						value="<c:out value="${loginWebdto.userPwd }"></c:out>"
+						value="<c:out value="${loginWebDto.userPwd }"></c:out>"
 						placeholder="密码" onfocus="this.placeholder=''"
 						onblur="this.placeholder='密码'" />
 					<div class="login-center-input-text">密码</div>
 				</div>
 
 			</div>
-			<div class="login-center clearfix">
-				<button class="login-button">登录</button>
-			</div>
+			<div class="login-button">登录</div>
 		</form>
 	</div>
-	<script type="text/javascript" src="js/app.js"></script>
 </body>
+<!-- 导入particles库 -->
+<script type="text/javascript" src="js/particles.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 
 </html>

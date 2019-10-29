@@ -3,14 +3,14 @@ particlesJS('particles-js',
 {
 	"particles" : {
 		"number" : {
-			"value" : 80,
+			"value" : 100,
 			"density" : {
 				"enable" : true,
 				"value_area" : 800
 			}
 		},
 		"color" : {
-			"value" : "#ffffff"
+			"value" : "random"
 		},
 		"shape" : {
 			"type" : "circle",
@@ -73,11 +73,11 @@ particlesJS('particles-js',
 		"events" : {
 			"onhover" : {
 				"enable" : true,
-				"mode" : "repulse"
+				"mode" : "bubble"
 			},
 			"onclick" : {
-				"enable" : false,
-				"mode" : "push"
+				"enable" : true,
+				"mode" : "repulse"
 			},
 			"resize" : true
 		},
@@ -90,7 +90,7 @@ particlesJS('particles-js',
 			},
 			"bubble" : {
 				"distance" : 400,
-				"size" : 40,
+				"size" : 20,
 				"duration" : 2,
 				"opacity" : 8,
 				"speed" : 3

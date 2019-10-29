@@ -20,51 +20,24 @@ public class LoginController {
 	@Autowired
 	private UserDto userDto;
 
-	/**
-	 * 登录check
-	 * @param webDto
-	 * @return
-	 */
-	private LoginWebDto loginCheck(LoginWebDto webDto) {
-		boolean loginCheck = true;
-
-		// 必须check
-		if (webDto.getUserName() == null || webDto.getUserName() == "") {
-
-			loginCheck = false;
-			webDto.setErrMsg("用户名不能为空！");
-		}
-		if (webDto.getUserPwd() == null || webDto.getUserPwd() == "") {
-			loginCheck = false;
-			webDto.setErrMsg("密码不能为空！");
-		}
-
-		webDto.setLoginCheck(loginCheck);
-		return webDto;
-
-	}
-
 	// 登录
 	@RequestMapping(value = "login", method = RequestMethod.POST)
-	public ModelAndView login(LoginWebDto webDto) {
+	public ModelAndView login(LoginWebDto loginWebDto) {
 
-		ModelAndView mad = new ModelAndView();
+		ModelAndView mad = new ModelAndView("index");
 
-		// 对参数进行check
-		loginCheck(webDto);
-
-		if (!webDto.getLoginCheck()) {
-
-			mad.addObject("loginWebDto", webDto);
-			mad.setViewName("../login");
-			return mad;
-		}
 		// Dto转换
-		webDtoTodto(webDto, userDto);
+		webDtoTodto(loginWebDto, userDto);
 		// 进行登陆处理
-		loginService.login(userDto);
+		//		loginService.login(userDto);
+
+		userDto.setStatus("0");
 		// Dto转换
-		dtoTowebDto(userDto, webDto);
+		dtoTowebDto(userDto, loginWebDto);
+
+		if (loginWebDto.getErrMsg() != null) {
+			mad.setViewName("../login");
+		}
 
 		return mad;
 	}
@@ -89,6 +62,12 @@ public class LoginController {
 	 * @param webDto
 	 */
 	private void dtoTowebDto(UserDto userDto, LoginWebDto webDto) {
+
+		if (userDto.getStatus() == "1") {
+			webDto.setErrMsg("用户名或密码错误，重新输入！");
+		} else if (userDto.getStatus() == "2") {
+			webDto.setErrMsg("该用户不存在！");
+		}
 
 	}
 

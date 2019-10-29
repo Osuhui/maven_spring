@@ -11,14 +11,34 @@ window.onload = function() {
  */
 
 // 登录处理
-/*$(function() {
-	var url="http://localhost:8080/maven_spring/login";
-	var data="";
+$(function() {
 
-	$(".login-button").click(
+	$(".login-button").click(function() {
+		// check通过时提交form
+		if (checkLogin()) {
+			$("form").submit();
+		}
+	})
+})
 
-			function() {
-				$.post(url,data,function(data){
-				});
-			})
-})*/
+/**
+ * 登录check
+ *
+ * @returns
+ */
+function checkLogin() {
+
+	// 必须check
+	if ($(":text").val() == "") {
+		$(":text").focus();
+		alert("用户名不能为空！");
+		return false;
+	}
+	if ($(":password").val() == "") {
+		$(":password").focus();
+		alert("用户密码不能为空！");
+		return false;
+	}
+	return true;
+
+}
