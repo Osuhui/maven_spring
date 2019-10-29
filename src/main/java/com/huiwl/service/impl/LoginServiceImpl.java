@@ -16,39 +16,33 @@ public class LoginServiceImpl implements LoginService {
 	@Autowired
 	private UserMapper userMapper;
 
-	@Autowired
-	private LoginConstant loginConstant;
-
 	@Override
 	public UserDto login(UserDto user) {
 
 		// 登录状态
 		String status = null;
 
-		// 查找出所有该名字的用户
+		// 获取所有该name的用户信息
 		List<UserDto> userList = userMapper.getUserFromUserName(user.getName());
 
-		if (userList != null && userList.size() != 0) {
+		if (userList != null && !userList.isEmpty()) {
 			for (UserDto userInfo : userList) {
 
 				if (user.getPassword().equals(userInfo.getPassword())) {
 					// 登陸成功
-					status = loginConstant.LOGIN_STATUS_0;
+					status = LoginConstant.LOGIN_STATUS_0;
 					user.setStatus(status);
 					return user;
-				} else {
-					continue;
 				}
-
 			}
 
 		} else {
 			// 登陸失败
-			status = loginConstant.LOGIN_STATUS_2;
+			status = LoginConstant.LOGIN_STATUS_2;
 		}
 
 		// 登陸失败
-		status = loginConstant.LOGIN_STATUS_1;
+		status = LoginConstant.LOGIN_STATUS_1;
 		user.setStatus(status);
 
 		return user;
