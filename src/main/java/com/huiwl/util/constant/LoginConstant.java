@@ -17,5 +17,6 @@ public class LoginConstant {
 	// 2:该用户没有注册
 	public static final String LOGIN_STATUS_2 = "2";
 
+	// test
 	public static final String LOGIN = "TEST";
 }

@@ -23,28 +23,36 @@ public class LoginController {
 	@Autowired
 	private UserDto userDto;
 
+	// Log
 	private static Log log = LogFactory.getLog(LoginController.class);
 
 	// 登录
 	@PostMapping(value = "login")
 	public ModelAndView login(LoginWebDto loginWebDto) {
 
+		if (log.isInfoEnabled()) {
+			log.info("◇LoginController#login -S");
+		}
+
 		ModelAndView mad = new ModelAndView("index");
 
 		// Dto转换
 		webDtoTodto(loginWebDto, userDto);
+
 		// 进行登陆处理
-		log.info("登录处理开始");
-		//		loginService.login(userDto);
-		log.info("登录处理结束");
-		userDto.setStatus("0");
+		loginService.login(userDto);
+
 		// Dto转换
 		dtoTowebDto(userDto, loginWebDto);
 
+		// login失败时自画面迁移
 		if (loginWebDto.getErrMsg() != null) {
 			mad.setViewName("../login");
 		}
 
+		if (log.isInfoEnabled()) {
+			log.info("◇LoginController#login -E");
+		}
 		return mad;
 	}
 

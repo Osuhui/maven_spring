@@ -2,6 +2,8 @@ package com.huiwl.service.impl;
 
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,11 +18,21 @@ public class LoginServiceImpl implements LoginService {
 	@Autowired
 	private UserMapper userMapper;
 
+	// Log
+	private static Log log = LogFactory.getLog(LoginServiceImpl.class);
+
+	/**
+	 * 登录处理
+	 * 
+	 * @param user 用户
+	 * @return UserDto 用户Dto
+	 */
 	@Override
 	public UserDto login(UserDto user) {
 
-		// 登录状态
-		String status = null;
+		if (log.isInfoEnabled()) {
+			log.info("◇LoginServiceImpl#login -S");
+		}
 
 		// 获取所有该name的用户信息
 		List<UserDto> userList = userMapper.getUserFromUserName(user.getName());
@@ -30,23 +42,22 @@ public class LoginServiceImpl implements LoginService {
 
 				if (user.getPassword().equals(userInfo.getPassword())) {
 					// 登陸成功
-					status = LoginConstant.LOGIN_STATUS_0;
-					user.setStatus(status);
-					return user;
+					user.setStatus(LoginConstant.LOGIN_STATUS_0);
+				} else {
+					// 用户名和密码不匹配
+					user.setStatus(LoginConstant.LOGIN_STATUS_1);
 				}
 			}
-
 		} else {
-			// 登陸失败
-			status = LoginConstant.LOGIN_STATUS_2;
+			// 没有该用户
+			user.setStatus(LoginConstant.LOGIN_STATUS_2);
 		}
 
-		// 登陸失败
-		status = LoginConstant.LOGIN_STATUS_1;
-		user.setStatus(status);
+		if (log.isInfoEnabled()) {
+			log.info("◇LoginServiceImpl#login -E");
+		}
 
 		return user;
 
 	}
-
 }
