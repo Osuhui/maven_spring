@@ -5,9 +5,14 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 import com.huiwl.service.AopService;
+import com.huiwl.service.impl.AopServiceImpl;
 import com.huiwl.util.advice.LogUtils;
 
 public class JdkProxy {
+
+	private JdkProxy() {
+
+	}
 
 	/**
 	 * JDK动态代理 :实现类必须要有接口
@@ -27,6 +32,7 @@ public class JdkProxy {
 
 		// 代理类需要实现的所有接口
 		Class<?>[] interfaces = aopService.getClass().getInterfaces();
+
 		// 方法执行器
 		InvocationHandler h = new InvocationHandler() {
 
@@ -43,17 +49,18 @@ public class JdkProxy {
 				// 前执行
 				logUtils.before();
 
+				// 执行目表方法
 				Object result = method.invoke(aopService, args);
 
 				// 后执行
 				logUtils.after();
 
 				System.out.println("---------JDK动态代理---------");
+
 				return result;
 			}
 		};
-		Object proxy = Proxy.newProxyInstance(loader, interfaces, h);
-		return (AopService) proxy;
+		return (AopServiceImpl) Proxy.newProxyInstance(loader, interfaces, h);
 
 	}
 

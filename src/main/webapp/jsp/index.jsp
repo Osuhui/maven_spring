@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -10,8 +9,10 @@
 
 <!-- 画面变量的宣言 -->
 
-<html>
+<!DOCTYPE HTML>
+<html lang="zh">
 <head>
+
 <title>主页</title>
 
 <!-- 导入JQuery库 -->
@@ -19,13 +20,16 @@
 
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="common/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/css/index.css">
+
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script type="text/javascript" src="common/js/bootstrap.min.js"></script>
+
 </head>
 
-<body style="text-align:center;">
+<body>
 	<c:out value="welcome! ${loginWebDto.userName}"></c:out>
-	<div style="text-align:center; background-color:green; color:white;">分页</div>
+	<div class = "page">分页</div>
 	<ul class="pagination">
 		<li><a href="#">&laquo;</a></li>
 		<li><a href="#">1</a></li>

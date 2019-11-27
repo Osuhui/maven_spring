@@ -10,11 +10,14 @@
 <!-- 画面变量的宣言 -->
 <c:set var="errMsg" value="${loginWebDto.errMsg}"></c:set>
 
-<html>
+<!DOCTYPE HTML>
+<html lang="zh">
 <head>
 
+<title>登录页面</title>
+
 <!-- 导入外部css式样 -->
-<link rel="stylesheet" media="screen" href="css/style.css">
+<link rel="stylesheet" media="screen" href="css/login.css">
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 
 <!-- 导入JQuery库 -->
@@ -22,7 +25,6 @@
 
 <!-- 导入js文件 -->
 <script type="text/javascript" src="js/login.js"></script>
-
 
 </head>
 
@@ -38,7 +40,7 @@
 
 			<div class="login-center clearfix">
 				<div class="login-center-img">
-					<img src="images/name.png" />
+					<img src="images/name.png"  alt="">
 				</div>
 				<div class="login-center-input">
 					<input type="text" name="userName"
@@ -51,7 +53,7 @@
 
 			<div class="login-center clearfix">
 				<div class="login-center-img">
-					<img src="images/password.png" />
+					<img src="images/password.png"  alt="">
 				</div>
 				<div class="login-center-input">
 					<input type="password" name="userPwd"

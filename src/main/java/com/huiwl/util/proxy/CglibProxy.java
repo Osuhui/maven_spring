@@ -11,6 +11,10 @@ import com.huiwl.util.advice.LogUtils;
 
 public class CglibProxy {
 
+	private CglibProxy() {
+
+	}
+
 	/**
 	 * cglib代理 :底层创建目标类的子类
 	 *
@@ -50,9 +54,7 @@ public class CglibProxy {
 			}
 		});
 
-		AopServiceImpl proxyService = (AopServiceImpl) enhancer.create();
-
-		return proxyService;
+		return (AopServiceImpl) enhancer.create();
 
 	}
 

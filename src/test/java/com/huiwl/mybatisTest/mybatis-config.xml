@@ -1,59 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
-  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
 <!-- 根标签 -->
 <configuration>
 
-  <properties>
-    <property name="driver" value="oracle.jdbc.OracleDriver" />
-    <property name="url"
-      value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" />
-    <property name="username" value="TESTER" />
-    <property name="password" value="TESTER" />
-  </properties>
+	<properties>
+		<property name="driver" value="oracle.jdbc.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" />
+		<property name="username" value="TESTER" />
+		<property name="password" value="TESTER" />
+	</properties>
 
-  <typeAliases>
-    <!-- <typeAlias alias="User" type="com.huiwl.dto.User" /> -->
-    <package name="com.huiwl.dto" />
-  </typeAliases>
+	<typeAliases>
+		<!-- <typeAlias alias="User" type="com.huiwl.dto.User" /> -->
+		<package name="com.huiwl.dto" />
+	</typeAliases>
 
-  <!-- 环境，可以配置多个，default：指定采用哪个环境 -->
-  <environments default="development">
-    <!-- id：唯一标识 -->
-    <environment id="test">
-      <!-- 事务管理器，JDBC类型的事务管理器 -->
-      <transactionManager type="JDBC" />
-      <!-- 数据源，池类型的数据源 -->
-      <dataSource type="POOLED">
-        <property name="driver" value="oracle.jdbc.OracleDriver" />
-        <property name="url"
-          value="jdbc:oracle:thin:@192.14.13.23:1521:jlnutdb" />
-        <property name="username" value="HITORI_01" />
-        <property name="password" value="HITORI_01" />
-      </dataSource>
-    </environment>
+	<!-- 环境，可以配置多个，default：指定采用哪个环境 -->
+	<environments default="development">
+		<!-- id：唯一标识 -->
+		<environment id="test">
+			<!-- 事务管理器，JDBC类型的事务管理器 -->
+			<transactionManager type="JDBC" />
+			<!-- 数据源，池类型的数据源 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@192.14.13.23:1521:jlnutdb" />
+				<property name="username" value="HITORI_01" />
+				<property name="password" value="HITORI_01" />
+			</dataSource>
+		</environment>
 
-    <environment id="development">
-      <!-- 事务管理器，JDBC类型的事务管理器 -->
-      <transactionManager type="JDBC" />
-      <!-- 数据源，池类型的数据源 -->
-      <dataSource type="POOLED">
-        <property name="driver" value="${driver}" /> <!-- 配置了properties，所以可以直接引用 -->
-        <property name="url" value="${url}" />
-        <property name="username" value="${username}" />
-        <property name="password" value="${password}" />
-      </dataSource>
-    </environment>
-  </environments>
+		<environment id="development">
+			<!-- 事务管理器，JDBC类型的事务管理器 -->
+			<transactionManager type="JDBC" />
+			<!-- 数据源，池类型的数据源 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
 
-  <mappers>
-    <!-- 扫描映射文件，必须是全名 -->
-    <mapper resource="mapper/UserMapper.xml" />
-    <mapper resource="mapper/UserResultMap.xml" />
-    <!-- 扫描接口，但是必须通过注解方式写SQL -->
-    <!-- <mapper class="com.huiwl.dao.UserMapper"/> -->
-    <!-- 扫描包下的所有接口作为mappers ，但是必须和映射文件在同一个包下且名称相同-->
-    <!-- <package name="mapper"/> -->
-  </mappers>
+	<mappers>
+		<!-- 扫描映射文件，必须是全名 -->
+		<mapper resource="mapper/UserMapper.xml" />
+		<mapper resource="mapper/UserResultMap.xml" />
+		<!-- 扫描接口，但是必须通过注解方式写SQL -->
+		<!-- <mapper class="com.huiwl.dao.UserMapper"/> -->
+		<!-- 扫描包下的所有接口作为mappers ，但是必须和映射文件在同一个包下且名称相同-->
+		<!-- <package name="mapper"/> -->
+	</mappers>
 </configuration>

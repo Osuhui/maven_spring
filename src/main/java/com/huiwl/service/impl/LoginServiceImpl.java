@@ -23,7 +23,7 @@ public class LoginServiceImpl implements LoginService {
 
 	/**
 	 * 登录处理
-	 * 
+	 *
 	 * @param user 用户
 	 * @return UserDto 用户Dto
 	 */

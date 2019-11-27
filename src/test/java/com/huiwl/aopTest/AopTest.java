@@ -16,7 +16,7 @@ public class AopTest {
 
 	@Test
 	public void testJdkProxy() {
-		AopService aopService = applicationContext.getBean("aopServiceId", AopService.class);
+		AopService aopService = applicationContext.getBean("aopService", AopService.class);
 		AopService aopProxy = JdkProxy.getProxy(aopService);
 		aopProxy.addAop();
 	}
@@ -29,9 +29,8 @@ public class AopTest {
 
 	@Test
 	public void testSpringProxy() {
-		AopService aopService = applicationContext.getBean("aopServiceId", AopService.class);
+		AopService aopService = applicationContext.getBean("aopService", AopService.class);
 		aopService.addAop();
 	}
-
 
 }

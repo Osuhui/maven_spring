@@ -8,10 +8,8 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
                         
         
-        <property name="context-root" value="maven_spring"/>
-                        
-        
         <property name="java-output-path" value="/maven_spring/target/classes"/>
+        <property name="context-root" value="/"/>
                     
     
     </wb-module>

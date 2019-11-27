@@ -10,8 +10,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     <setting name="useColumnLabel" value="true" />
     <setting name="useGeneratedKeys" value="false" />
     <setting name="autoMappingBehavior" value="PARTIAL" />
-    <setting name="autoMappingUnknownColumnBehavior"
-      value="WARNING" />
+    <setting name="autoMappingUnknownColumnBehavior" value="WARNING" />
     <setting name="defaultExecutorType" value="SIMPLE" />
     <setting name="defaultStatementTimeout" value="25" />
     <setting name="defaultFetchSize" value="100" />
@@ -19,8 +18,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     <setting name="mapUnderscoreToCamelCase" value="false" />
     <setting name="localCacheScope" value="SESSION" />
     <setting name="jdbcTypeForNull" value="OTHER" />
-    <setting name="lazyLoadTriggerMethods"
-      value="equals,clone,hashCode,toString" />
+    <setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString" />
   </settings>
   <!-- 指定一个包名，MyBatis 会在包名下面搜索需要的 Java Bean -->
   <typeAliases>
