@@ -25,10 +25,12 @@
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script type="text/javascript" src="common/js/bootstrap.min.js"></script>
 
+<c:set var="userList" value="${ IndexWebDto.userList}"></c:set>
+
 </head>
 
 <body>
-	<c:out value="welcome! ${loginWebDto.userName}"></c:out>
+	<c:out value="welcome! ${IndexWebDto.userName}"></c:out>
 	<div class = "page">分页</div>
 	<ul class="pagination">
 		<li><a href="#">&laquo;</a></li>
@@ -40,5 +42,6 @@
 		<li><a href="#">&raquo;</a></li>
 	</ul>
 
+	<c:forEach var="user" items="${ userList }" varStatus="status"></c:forEach>
 </body>
 </html>

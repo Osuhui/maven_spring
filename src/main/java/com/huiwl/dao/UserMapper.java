@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.huiwl.dto.PageInfoDto;
 import com.huiwl.dto.UserDto;
 
 public interface UserMapper {
@@ -27,5 +28,5 @@ public interface UserMapper {
 	public void deleteUser(@Param("userId") String userId);
 
 	// 分页
-	public List<UserDto> getUserFromIndex(@Param("index") String index, @Param("length") int length);
+	public List<UserDto> getUserFromIndex(@Param("pageInfo") PageInfoDto pageInfo);
 }
