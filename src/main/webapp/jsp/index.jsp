@@ -20,7 +20,7 @@
 
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="common/css/bootstrap.min.css">
-<link rel="stylesheet" href="/static/css/index.css">
+<link rel="stylesheet" href="static/css/index.css">
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script type="text/javascript" src="common/js/bootstrap.min.js"></script>
@@ -32,6 +32,14 @@
 <body>
 	<c:out value="welcome! ${IndexWebDto.userName}"></c:out>
 	<div class = "page">分页</div>
+	<table>
+		<thead>用户信息</thead><c:out value="${LoginWebDto}"></c:out>
+		<c:forEach var="userDto" items="${ userList }" varStatus="status">
+			<tr>
+				<td><c:out value="${userDto.id }"></c:out></td>
+			</tr>
+		</c:forEach>
+	</table>
 	<ul class="pagination">
 		<li><a href="#">&laquo;</a></li>
 		<li><a href="#">1</a></li>
@@ -42,6 +50,5 @@
 		<li><a href="#">&raquo;</a></li>
 	</ul>
 
-	<c:forEach var="user" items="${ userList }" varStatus="status"></c:forEach>
 </body>
 </html>

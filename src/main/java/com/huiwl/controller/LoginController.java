@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.huiwl.dto.UserDto;
 import com.huiwl.dto.webDto.LoginWebDto;
@@ -28,13 +27,11 @@ public class LoginController {
 
 	// 登录
 	@PostMapping(value = "login")
-	public ModelAndView login(LoginWebDto loginWebDto) {
+	public String login(LoginWebDto loginWebDto) {
 
 		if (log.isInfoEnabled()) {
 			log.info("◇LoginController#login -S");
 		}
-
-		ModelAndView mad = new ModelAndView("index");
 
 		// Dto转换
 		webDtoTodto(loginWebDto, userDto);
@@ -47,13 +44,13 @@ public class LoginController {
 
 		// login失败时自画面迁移
 		if (loginWebDto.getErrMsg() != null) {
-			mad.setViewName("../login");
+			return "../login";
 		}
 
 		if (log.isInfoEnabled()) {
 			log.info("◇LoginController#login -E");
 		}
-		return mad;
+		return "redirect:index";
 	}
 
 	/**

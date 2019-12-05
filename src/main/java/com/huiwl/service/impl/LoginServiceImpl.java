@@ -12,7 +12,7 @@ import com.huiwl.dto.UserDto;
 import com.huiwl.service.LoginService;
 import com.huiwl.util.constant.LoginConstant;
 
-@Service("loginService")
+@Service
 public class LoginServiceImpl implements LoginService {
 
 	@Autowired

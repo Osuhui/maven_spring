@@ -49,7 +49,6 @@
       ) tmp
     where
       tmp.ROWNO <![CDATA[>=]]> #{pageInfo.pageCurRecFstIdx}
-
   </select>
 
   <update id="updateUser" parameterType="UserDto">
