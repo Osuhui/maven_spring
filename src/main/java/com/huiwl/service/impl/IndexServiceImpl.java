@@ -1,5 +1,6 @@
 package com.huiwl.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -35,7 +36,15 @@ public class IndexServiceImpl implements IndexService {
 		}
 
 		// 按照条件查找用户
-		List<UserDto> userList = userMapper.getUserFromIndex(pageInfo);
+//		List<UserDto> userList = userMapper.getUserFromIndex(pageInfo);
+
+		UserDto user = new UserDto();
+		user.setId("123");
+		user.setName("abc");
+
+		List<UserDto> userList = new ArrayList<>();
+		userList.add(user);
+
 
 		if (log.isInfoEnabled()) {
 			log.info("◇IndexServiceImpl#userInfo -E");

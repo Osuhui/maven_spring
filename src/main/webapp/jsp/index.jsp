@@ -30,24 +30,27 @@
 </head>
 
 <body>
-	<c:out value="welcome! ${IndexWebDto.userName}"></c:out>
-	<div class = "page">分页</div>
-	<table>
-		<thead>用户信息</thead><c:out value="${LoginWebDto}"></c:out>
-		<c:forEach var="userDto" items="${ userList }" varStatus="status">
+	<div class="page">分页</div>
+	<div style="width: 50em; height: 50em;float:center;">
+		<table>
+			<caption>用户信息</caption>
 			<tr>
-				<td><c:out value="${userDto.id }"></c:out></td>
+				<th id="userId">ID</th>
+				<th id="userName">NAME</th>
 			</tr>
-		</c:forEach>
-	</table>
+			<c:forEach var="user" items="${ userList }" varStatus="status">
+				<tr>
+					<td><c:out value="${user.id}"></c:out></td>
+					<td><c:out value="${user.name}"></c:out></td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
 	<ul class="pagination">
-		<li><a href="#">&laquo;</a></li>
-		<li><a href="#">1</a></li>
-		<li><a href="#">2</a></li>
-		<li><a href="#">3</a></li>
-		<li><a href="#">4</a></li>
-		<li><a href="#">5</a></li>
-		<li><a href="#">&raquo;</a></li>
+		<li><a href="?start=0">首页</a></li>
+		<li><a href="?">上一页</a></li>
+		<li><a href="?">下一页</a></li>
+		<li><a href="?">末页</a></li>
 	</ul>
 
 </body>

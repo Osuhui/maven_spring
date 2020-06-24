@@ -1,19 +1,10 @@
-package com.huiwl.dto.webDto;
+package com.huiwl.dto.webdto;
 
 public class LoginWebDto {
 
-	private String userId;
 	private String userName;
 	private String userPwd;
 	private String errMsg;
-
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
 
 	public String getUserName() {
 		return userName;

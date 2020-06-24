@@ -5,15 +5,14 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.huiwl.dto.UserDto;
-import com.huiwl.dto.webDto.LoginWebDto;
+import com.huiwl.dto.webdto.LoginWebDto;
 import com.huiwl.service.LoginService;
 import com.huiwl.util.constant.LoginConstant;
 
 @Controller
-@RequestMapping("/")
 public class LoginController {
 
 	@Autowired
@@ -26,8 +25,8 @@ public class LoginController {
 	private static Log log = LogFactory.getLog(LoginController.class);
 
 	// 登录
-	@PostMapping(value = "login")
-	public String login(LoginWebDto loginWebDto) {
+	@PostMapping(value = "/login")
+	public String login(LoginWebDto loginWebDto, RedirectAttributes attr) {
 
 		if (log.isInfoEnabled()) {
 			log.info("◇LoginController#login -S");
@@ -50,6 +49,8 @@ public class LoginController {
 		if (log.isInfoEnabled()) {
 			log.info("◇LoginController#login -E");
 		}
+
+		attr.addFlashAttribute("userId", userDto.getId());
 		return "redirect:index";
 	}
 
